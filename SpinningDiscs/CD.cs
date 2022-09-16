@@ -1,11 +1,21 @@
 ﻿using System;
 namespace SpinningDiscs
 {
-    public class CD
+    public class CD: BaseDisc, IOpticalDisc
     {
-        // TODO: Implement your custom interface.
+        public CD(string name, int totalGigaBytes, string discType, int dataSize) : base(name, totalGigaBytes, discType, dataSize)
+        {
+        }
 
-        // TODO: Determine which fields, methods, and constructors can be extended from the base class and which ones
-        //  need to be declared separately. 
-    }
-}
+        public void ReadData()
+        {
+            Console.WriteLine("ReadCD");
+        }
+
+        public void SpinDisc()
+        {
+            Console.WriteLine("WriteCD");
+        }
+
+    } // close class
+} // close namespace
